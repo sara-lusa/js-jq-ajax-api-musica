@@ -48,11 +48,21 @@ $(document).ready(function() {
       {
         url: 'https://flynn.boolean.careers/exercises/api/array/music',
         method: 'GET',
-        success: function() {
+        success: function(data) {
+          var cds = data.response;
 
+          for (var i = 0; i < cds.length; i++) {
+            var cdsGenre = cds[i].genre;
+            var cdsGenreStandard = cdsGenre.toLowerCase();
+            // console.log(cdsGenreStandard);
+
+            if (cdsGenreStandard !== valoreSelect) {
+              
+            }
+          }
         },
         error: function() {
-          
+
         }
       }
     );
