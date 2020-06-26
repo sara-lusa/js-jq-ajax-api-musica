@@ -41,4 +41,21 @@ $(document).ready(function() {
     }
   );
 
+  $('.genre').change(function () {
+    var valoreSelect = $(this).val();
+
+    $.ajax(
+      {
+        url: 'https://flynn.boolean.careers/exercises/api/array/music',
+        method: 'GET',
+        success: function() {
+
+        },
+        error: function() {
+          
+        }
+      }
+    );
+  });
+
 });

@@ -26,6 +26,22 @@ header img {
     margin-top: 10px;
 }
 
+.select-genre {
+  text-align: center;
+  padding-top: 40px;
+}
+label {
+  color: white;
+  display: block;
+  padding-bottom: 20px;
+
+}
+.select-genre select {
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+}
+
 .cds-container {
     display: flex;
     justify-content: center;
