@@ -41,31 +41,29 @@ $(document).ready(function() {
     }
   );
 
+  // Genero un evento quando seleziono una option della select
   $('.genre').change(function () {
+
+    // Dichiaro una variabile(valoreSelect) con valore della option selezionata
     var valoreSelect = $(this).val();
 
-    $.ajax(
-      {
-        url: 'https://flynn.boolean.careers/exercises/api/array/music',
-        method: 'GET',
-        success: function(data) {
-          var cds = data.response;
+    // Controllo quali div.cd hanno l'attr
+    // uguale alla valoreSelect
+    $('.cd').each(function() {
 
-          for (var i = 0; i < cds.length; i++) {
-            var cdsGenre = cds[i].genre;
-            var cdsGenreStandard = cdsGenre.toLowerCase();
-            // console.log(cdsGenreStandard);
+      var genreMusicale = $(this).data('genre');
 
-            if (cdsGenreStandard !== valoreSelect) {
-              
-            }
-          }
-        },
-        error: function() {
-
-        }
+      // Se sono uguali li mostro sulla pagina
+      if(genreMusicale === valoreSelect || valoreSelect === 'all') {
+        $(this).show();
       }
-    );
+      // Se no, li nascondo
+      else {
+        $(this).hide();
+      }
+
+    });
+
   });
 
 });
